@@ -60,7 +60,7 @@ cp ./var/log/TicketCounter.log /opt/otrs-${NEW_VERSION}/var/log/TicketCounter.lo
 
 echo "Setting permissions..."
 cd /opt/otrs-${NEW_VERSION}/
-bin/otrs.SetPermissions.pl --otrs-user=otrs --web-group=www-data
+bin/otrs.SetPermissions.pl --otrs-user=otrs ``--web-group=www-data
 
 
 echo "Linking..."
@@ -94,6 +94,9 @@ su -c "bin/Cron.sh start" -s /bin/bash otrs
 cd /opt/otrs/
 su -c "bin/otrs.Console.pl Maint::Registration::UpdateSend --force" -s /bin/bash otrs
 su -c "bin/otrs.Console.pl Maint::Cache::Delete" -s /bin/bash otrs
+su -c "perl -cw /opt/otrs/bin/cgi-bin/index.pl" -s /bin/bash otrs
+su -c "perl -cw /opt/otrs/bin/cgi-bin/customer.pl" -s /bin/bash otrs
+su -c "perl -cw /opt/otrs/bin/otrs.Console.pl" -s /bin/bash otrs
 
 
 echo "Cleaning up..."
