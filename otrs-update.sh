@@ -60,7 +60,7 @@ cp ./var/log/TicketCounter.log /opt/otrs-${NEW_VERSION}/var/log/TicketCounter.lo
 
 echo "Setting permissions..."
 cd /opt/otrs-${NEW_VERSION}/
-bin/otrs.SetPermissions.pl --otrs-user=otrs ``--web-group=www-data
+bin/otrs.SetPermissions.pl --otrs-user=otrs --web-group=www-data
 
 
 echo "Linking..."
