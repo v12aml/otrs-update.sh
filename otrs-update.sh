@@ -39,7 +39,7 @@ fi
 
 
 echo "Extracting..."
-tar -jxvf otrs-${NEW_VERSION}.tar.bz2  -C /opt/
+tar -jxf otrs-${NEW_VERSION}.tar.bz2  -C /opt/
 
 
 echo "Stoping services..."
