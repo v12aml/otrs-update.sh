@@ -66,7 +66,7 @@ echo "Linking..."
 cd /opt
 rm -f /opt/otrs
 ln -sf otrs-${NEW_VERSION} otrs
-chown -R otrs /opt/otrs/otrs-${NEW_VERSION}
+chown -R otrs /opt/otrs-${NEW_VERSION}
 
 
 echo "Migrating..."
