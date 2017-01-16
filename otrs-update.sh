@@ -24,7 +24,7 @@ else
 fi
 
 
-TMP_DIR=`mktemp`
+TMP_DIR=`mktemp -d`
 cd ${TMP_DIR}
 
 
