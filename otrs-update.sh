@@ -46,9 +46,8 @@ echo "Stoping services..."
 systemctl stop cron.service postfix.service apache2.service
 
 cd /opt/otrs-${INSTALLED_VERSION}
-bin/Cron.sh stop
-bin/otrs.Scheduler.pl -a stop
-bin/otrs.Daemon.pl stop
+su -c "bin/Cron.sh stop" -s /bin/bash otrs
+su -c "bin/otrs.Daemon.pl stop" -s /bin/bash otrs
 
 
 echo "Copying configs and other stuff..."
